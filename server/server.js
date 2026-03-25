@@ -1,15 +1,19 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const path = require("path");
 const connectDB = require("./config/db");
 const milestoneRoutes = require("./routes/milestoneRoutes");
 
+// Load environment variables
 dotenv.config();
-connectDB();
 
+// Initialize app
 const app = express();
+
+// Middleware
 app.use(express.json());
 
-// Allow local front-end (e.g., VS Code Live Server) to call this API.
+// CORS (allow all for now — can restrict later)
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
@@ -18,14 +22,36 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get("/", (req, res) => {
+// API Routes
+app.get("/api", (req, res) => {
     res.send("API Running");
 });
 
-app.use("/milestones", milestoneRoutes);
+app.use("/api/milestones", milestoneRoutes);
 
+// ✅ OPTIONAL: Serve frontend (if you want single deployment)
+if (process.env.NODE_ENV === "production") {
+    const clientPath = path.join(__dirname, "../client");
+
+    app.use(express.static(clientPath));
+
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(clientPath, "index.html"));
+    });
+}
+
+// Connect DB and start server
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+connectDB()
+    .then(() => {
+        console.log("MongoDB connected");
+
+        app.listen(PORT, () => {
+            console.log(`Server running on port ${PORT}`);
+        });
+    })
+    .catch((err) => {
+        console.error("Database connection failed:", err);
+        process.exit(1);
+    });
