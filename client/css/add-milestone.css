@@ -1,0 +1,38 @@
+/* ADD BUTTON */
+.add-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #e75480;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 100;
+}
+
+/* FORM BOX */
+.form-box {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+}
+
+.form-box input,
+.form-box select {
+    padding: 8px;
+}
+
+.form-box button {
+    background: #e75480;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}

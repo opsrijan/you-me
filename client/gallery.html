@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You & Me</title>
+
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/gallery-controls.css">
+    <link rel="stylesheet" href="css/modal.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo">You & Me</a>
+    <nav>
+        <ul>
+            <li><a href="#">Memories</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="timeline.html">Timeline</a></li>
+            <li><a href="#">For Her</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="gallery-controls">
+    <button id="toggleDate">Group by Date</button>
+</div>
+
+<section class="gallery-container">
+    <div id="gallery"></div>
+</section>
+
+<!-- MODAL -->
+<div id="mediaModal" class="modal">
+    <span class="close">&times;</span>
+    <img id="modalImg" class="modal-content">
+    <video id="modalVideo" class="modal-content" controls></video>
+</div>
+
+<script src="https://widget.cloudinary.com/v2.0/global/all.js"></script>
+
+<button id="uploadVideo">Upload Video</button>
+
+<script>
+const widget = cloudinary.createUploadWidget(
+  {
+    cloudName: "YOUR_CLOUD_NAME",
+    uploadPreset: "YOUR_UPLOAD_PRESET",
+    resourceType: "video",   // IMPORTANT
+    maxFileSize: 300000000,  // ~300MB
+    chunk_size: 6000000      // 6MB chunks
+  },
+  (error, result) => {
+    if (!error && result.event === "success") {
+      console.log("Video URL:", result.info.secure_url);
+      console.log("Public ID:", result.info.public_id);
+
+      // Send to backend
+      fetch("/save-video/", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+          video_url: result.info.secure_url,
+          public_id: result.info.public_id,
+          title: "Video Title",
+          description: "Some text"
+        })
+      });
+    }
+  }
+);
+
+document.getElementById("uploadVideo").onclick = () => widget.open();
+</script>
+
+<script defer src="js/gallery.js"></script>
+
+</body>
+</html>

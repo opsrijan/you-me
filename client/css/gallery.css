@@ -1,0 +1,105 @@
+.gallery-container {
+    padding: 20px 40px;
+    background: #fff5f7;
+    min-height: 100vh;
+}
+
+.date-group {
+    margin-bottom: 35px;
+}
+
+.date-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ff4d6d;
+    margin: 10px 5px 15px;
+    padding-left: 10px;
+    border-left: 4px solid #ff4d6d;
+}
+
+/* GRID */
+.image-grid {
+    column-count: 4;
+    column-gap: 12px;
+}
+
+.image-card {
+    break-inside: avoid;
+    margin-bottom: 12px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* IMAGE + VIDEO */
+.image-card img,
+.image-card video {
+    width: 100%;
+    max-height: 70vh;
+    border-radius: 12px;
+    transition: 0.3s ease;
+    display: block;
+    object-fit: cover;
+}
+
+/* Hover */
+.image-card:hover img,
+.image-card:hover video {
+    transform: scale(1.05);
+    filter: brightness(0.85);
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 8px;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.image-card:hover .overlay {
+    opacity: 1;
+}
+
+/* ▶ Play icon */
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: white;
+    pointer-events: none;
+}
+
+/* SAME HEIGHT, NATURAL WIDTH */
+/* Card */
+.same-height-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.same-height-grid .image-card {
+    height: 200px;
+    flex: 0 1 auto;       /* 🔥 allows shrinking */
+    max-width: 300px;     /* 🔥 prevents huge images */
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* Media */
+.same-height-grid img,
+.same-height-grid video {
+    height: 100%;
+    width: auto;          /* 🔥 keep aspect ratio */
+    object-fit: cover;
+    display: block;
+}

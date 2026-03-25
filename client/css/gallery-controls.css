@@ -1,0 +1,27 @@
+.gallery-controls {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#toggleDate {
+    background: linear-gradient(135deg, #ff8fa3, #ff4d6d);
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    font-size: 14px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 77, 109, 0.3);
+}
+
+#toggleDate:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 18px rgba(255, 77, 109, 0.45);
+}
+
+#toggleDate:active {
+    transform: scale(0.96);
+}

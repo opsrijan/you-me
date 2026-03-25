@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timeline</title>
+
+  <link rel="stylesheet" href="css/body.css">
+  <link rel="stylesheet" href="css/timeline.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/add-milestone.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="logo">You & Me</a>
+      <nav>
+        <ul>
+          <li><a href="#">Memories</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="timeline.html">Timeline</a></li>
+          <li><a href="#">For Her</a></li>
+        </ul>
+      </nav>
+</header>
+
+<section class="story-section">
+  <h1 class="story-title">Our Timeline</h1>
+
+  <div class="timeline-wrapper">
+    <div class="timeline-line"></div>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<!-- ADD BUTTON -->
+<button id="addMilestoneBtn" class="add-btn">+ Add Milestone</button>
+
+<!-- FORM MODAL -->
+<div id="formModal" class="modal">
+  <div class="form-box">
+    <span class="close" id="closeForm">&times;</span>
+
+    <h2>Add Milestone</h2>
+
+    <input type="text" id="dateInput" placeholder="Date (DD.MM.YYYY)">
+    <input type="text" id="titleInput" placeholder="Title">
+    <input type="text" id="descInput" placeholder="Description">
+    <input type="text" id="mediaInput" placeholder="Media URL (comma separated)">
+    <select id="positionInput">
+      <option value="top">Top</option>
+      <option value="bottom">Bottom</option>
+    </select>
+
+    <button id="saveMilestone">Save</button>
+  </div>
+</div>
+
+<!-- IMAGE MODAL -->
+<div id="imageModal" class="modal">
+  <span class="close" id="closeImage">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<script src="js/milestones.js"></script>
+<script src="js/timeline.js"></script>
+
+</body>
+</html>

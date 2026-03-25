@@ -1,0 +1,52 @@
+/* HERO */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 80px;
+    gap: 80px;
+}
+
+.hero img {
+    width: 300px;
+    border-radius: 20px;
+}
+
+.hero-right h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.adjectives {
+    color: #ff4d6d;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.description {
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+
+
+/* ABOUT */
+
+.about-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 80px;
+    gap: 80px;
+    background: white;
+}
+
+.about-me img {
+    width: 300px;
+    border-radius: 20px;
+}
+
+
+
+
