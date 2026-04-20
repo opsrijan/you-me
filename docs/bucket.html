@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Journey</title>
+    <link rel="stylesheet" href="css/bucket.css">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="title">💖 Our Journey</h1>
+
+    <!-- Progress -->
+    <div class="progressBox">
+        <span id="progressText"></span>
+        <div class="progressBar">
+            <div class="progressFill" id="progressFill"></div>
+        </div>
+    </div>
+
+    <!-- Toggle -->
+    <div class="toggle">
+        <button class="active" data-type="completed">Completed</button>
+        <button data-type="dream">Dreams</button>
+    </div>
+
+    <!-- Cards -->
+    <div id="cardGrid" class="cardGrid"></div>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal hidden">
+    <div class="modalContent">
+        <span id="closeModal">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+        <p id="modalDate"></p>
+    </div>
+</div>
+
+<script src="js/bucket.js"></script>
+</body>
+</html>

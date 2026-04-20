@@ -1,0 +1,28 @@
+[
+    {
+        "title": "Watched Sunrise 🌄",
+        "short": "That peaceful morning...",
+        "description": "We woke up early and watched the sunrise together. It felt magical.",
+        "status": "completed",
+        "date": "Jan 2025"
+    },
+    {
+        "title": "Late Night Call 📞",
+        "short": "Talking till 3AM...",
+        "description": "One of our longest calls where we spoke about everything.",
+        "status": "completed",
+        "date": "Feb 2025"
+    },
+    {
+        "title": "Trip Together ✈️",
+        "short": "Coming soon...",
+        "description": "A trip where we explore a new place together.",
+        "status": "dream"
+    },
+    {
+        "title": "Watch Movie Together 🎬",
+        "short": "Popcorn + us",
+        "description": "A cozy movie night together.",
+        "status": "dream"
+    }
+]

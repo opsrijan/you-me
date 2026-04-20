@@ -38,7 +38,7 @@ function renderTimeline(items) {
 
     items.forEach((item) => {
 
-        const position = item.position || "top";
+        const position = item.position;
 
         const div = document.createElement("div");
         div.className = `milestone ${position}`;

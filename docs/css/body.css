@@ -5,27 +5,31 @@ header {
     z-index: 1000;
     backdrop-filter: blur(10px);
 
-    background: white; /* important for overlay */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding-top: 0px;
+    background: #fff5f7;
+    color: #333;
 }
 
 .logo {
     text-decoration: none;
     color: inherit;
-    font-size: 24px;
     font-weight: bold;
     cursor: pointer;
-}
-
-.logo {
     font-family: 'Great Vibes', cursive;
-    font-size: 40px;
+    font-size: 28px;
+    color: #ff4d6d;
 }
 
 .logo:hover {
@@ -44,28 +48,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-    background: #fff5f7;
-    color: #333;
-}
-
-
-
 /* HEADER */
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 80px;
-    background: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-    font-size: 28px;
-    color: #ff4d6d;
-}
 
 nav ul {
     display: flex;
